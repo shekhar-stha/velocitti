@@ -1,0 +1,292 @@
+@import "./navbar";
+
+@import "./slick";
+
+// Arrow Button
+.learn-more {
+    min-width: 12rem;
+    height: auto;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+
+
+    .circle-bg {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: #282936;
+        // border-radius: 1.625rem;
+
+        .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+
+            &.arrow {
+                transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+                left: 0.625rem;
+                width: 1.125rem;
+                height: 0.125rem;
+                background: none;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: -0.29rem;
+                    right: 0.0625rem;
+                    width: 0.625rem;
+                    height: 0.625rem;
+                    border-top: 0.125rem solid #fff;
+                    border-right: 0.125rem solid #fff;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    .button-text {
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 2.8rem;
+        color: #282936;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        .circle-bg {
+            width: 100%;
+
+            .icon.arrow {
+                background: #fff;
+                transform: translate(1rem, 0);
+            }
+        }
+
+        .button-text {
+            color: #fff;
+        }
+    }
+}
+
+
+// Notch Button
+.notch-button {
+    min-height: 53px;
+    min-width: 166px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(110, 239, 255, 0.5) -12.74%, rgba(106, 224, 255, 0.271) 56.76%);
+    border: 2px solid #acf7ff;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+
+    @media (max-width: 992px) {
+      background: linear-gradient(90deg, rgba(6, 98, 110, 0.7) -12.74%, rgba(2, 84, 104, 0.471) 56.76%);
+    }
+
+    &:before {
+        content: "";
+        width: 4px;
+        height: 28px;
+        background: #19173b;
+        border: 2px solid #acf7ff;
+        transform: rotate(-45deg);
+        position: absolute;
+        border-top: 0;
+        border-left: 0;
+        border-bottom: 0;
+        bottom: -7px;
+        left: 4px;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: -2px;
+        bottom: -2px;
+        border-top: 15px solid transparent;
+        border-left: 15px solid #fffcf7;
+    }
+}
+// Scrolldown
+.scrolldown {
+    --color: #001F2B;;
+    --sizeX: 30px;
+    --sizeY: 50px;
+    position: relative;
+    width: var(--sizeX);
+    height: var(--sizeY);
+    border: calc(var(--sizeX) / 10) solid var(--color);
+    border-radius: 50px;
+    box-sizing: border-box;
+    cursor: pointer;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      width: 6px;
+      height: 6px;
+      margin-left: -3px;
+      background-color: var(--color);
+      border-radius: 100%;
+      animation: scrolldown-anim 2s infinite;
+      box-sizing: border-box;
+      box-shadow: 0px -5px 3px 1px #03101a66;
+    }
+  }
+  
+  @keyframes scrolldown-anim {
+    0% {
+      opacity: 0;
+      height: 6px;
+    }
+  
+    40% {
+      opacity: 1;
+      height: 10px;
+    }
+  
+    80% {
+      transform: translate(0, 20px);
+      height: 10px;
+      opacity: 0;
+    }
+  
+    100% {
+      height: 3px;
+      opacity: 0;
+    }
+  }
+  
+  .chevrons {
+    padding: 6px 0 0 0;
+    margin-left: -3px;
+    margin-top: 48px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chevrondown {
+    margin-top: -6px;
+    position: relative;
+    border: solid var(--color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+  
+    &:nth-child(odd) {
+      animation: pulse54012 500ms ease infinite alternate;
+    }
+  
+    &:nth-child(even) {
+      animation: pulse54012 500ms ease infinite alternate 250ms;
+    }
+  }
+  
+  @keyframes pulse54012 {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 0.5;
+    }
+  }
+  
+// Changing Button
+.changing-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+    background: $primary;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+    border: none;
+}
+
+.changing-button:after {
+    content: " ";
+    width: 0%;
+    height: 100%;
+    background: $white;
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    right: 0;
+
+}
+
+.changing-button:hover::after {
+    right: auto;
+    left: 0;
+    width: 100%;
+}
+
+.changing-button span,
+.changing-button a {
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    padding: 18px 25px;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.changing-button:hover span,
+.changing-button:hover a {
+    color: $dark;
+    animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

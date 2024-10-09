@@ -1,0 +1,365 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Color Set */
+$primary: #001F2B;
+// $secondary: #1596b6;
+$secondary: #0d7994;
+$warning: #044b06;
+$success: #c9dfe7;
+$danger: #ff4d00;
+$black: #302c2c;
+$white: #f8f8f8;
+$creamWhite: #f7f2ed;
+$info: #808080;
+$new: #eff8fc;
+$bg-color: #c9dfe7;
+
+// Additional shades
+$primary-light: lighten($primary, 15%);
+$secondary-light: lighten($secondary, 40%);
+$warning-light: lighten($warning, 15%);
+$success-light: lighten($success, 15%);
+$danger-light: lighten($danger, 15%);
+$info-light: lighten($info, 15%);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 750px,
+    lg: 960px,
+    xl: 1180px,
+    xxl: 1360px,
+);
+$grid-breakpoints: (
+    xs: 0,
+    vm: 390px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// @import "~bootstrap/scss/bootstrap";
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-15 {
+    font-size: 15px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-17 {
+    font-size: 17px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-19 {
+    font-size: 19px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-21 {
+    font-size: 21px;
+}
+
+.fs-22 {
+    font-size: 22px;
+}
+
+.fs-23 {
+    font-size: 23px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-32 {
+    font-size: 32px;
+}
+
+.lh-25 {
+    line-height: 25px;
+}
+
+p {
+    margin: 0px;
+}
+
+.btn {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+// button, .btn{
+//     font-family: 'poppins', sans-serif;
+//     letter-spacing: 1px;
+// }
+
+.btn-primary {
+    color: $white;
+    font-weight: 500;
+    border: 2px solid $primary;
+
+    &:hover {
+        color: $primary;
+        background-color: transparent;
+        border: 2px solid $primary;
+    }
+}
+
+.btn-secondary {
+    color: $white;
+    font-weight: 500;
+    border: 2px solid $secondary;
+    transition: all 1000ms;
+
+    &:hover {
+        color: $secondary;
+        background-color: transparent;
+        border: 2px solid $secondary;
+    }
+}
+
+.btn-outline-secondary {
+    padding: 0.4em 2em;
+    border: none;
+    border-radius: 5px;
+    color: $secondary;
+    transition: all 1000ms;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid $secondary;
+
+    &:hover {
+        color: #ffffff;
+        transform: scale(1.1);
+        outline: 2px solid $secondary;
+        box-shadow: 4px 5px 17px -4px $secondary;
+
+        &::before {
+            width: 250%;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -50px;
+        top: 0;
+        width: 0;
+        height: 100%;
+        background-color: $secondary;
+        transform: skewX(45deg);
+        z-index: -1;
+        transition: width 1000ms;
+    }
+}
+
+.btn-light {
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+        color: $white;
+        background-color: transparent;
+
+        i {
+            padding-left: 1rem;
+        }
+    }
+}
+
+// a,
+// button {
+//     &:hover {
+//         i {
+//             padding-left: 1rem;
+//         }
+//     }
+// }
+
+
+
+.btn-warning {
+    color: $white;
+}
+
+.btn-success {
+    background-color: $success;
+    border-color: $success;
+    color: #000;
+}
+
+.btn-outline-success {
+    color: $success;
+    border-color: $success;
+}
+
+// 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none !important;
+    transition: all 0.3s ease-in;
+    scroll-behavior: smooth;
+}
+
+
+a {
+    color: #000000;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+section {
+    overflow: hidden;
+    margin-bottom: 4.5rem;
+}
+
+.header {
+    font-size: 45px;
+    font-weight: 400;
+    position: relative;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    mark {
+        font-weight: 600;
+        background-color: $secondary;
+        color: $white;
+        letter-spacing: 2.7px;
+        line-height: 65px;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 40px;
+    }
+}
+
+.header-element {
+    &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 15rem;
+        border-top: 4px solid $secondary;
+        left: 0%;
+        top: 47%;
+
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 15rem;
+        border-top: 4px solid $secondary;
+        right: 0%;
+        top: 47%;
+
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+}
+
+.cinzel {
+    font-family: 'Cinzel', serif;
+}
+
+.sub-header {
+    font-size: 20px;
+    font-weight: 600;
+    color: $primary;
+    position: relative;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    padding-left: 1rem;
+    width: fit-content;
+    // &:hover{
+    //     text-shadow: -3px 3px 29px rgba(91,241,72,1);
+    //     &::after{
+    //         left: inherit;
+    //         left: 104%;
+    //         top: 0;
+    //     }
+    // }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 100%;
+        background-color: $primary;
+        left: 0;
+        top: 0;
+        transition: all 0.9s;
+    }
+}
+
+section {
+    &:hover {
+        .sub-header {
+            text-shadow: -3px 3px 29px rgba(91, 241, 72, 1);
+            padding-left: 0rem;
+
+            &::after {
+                left: inherit;
+                left: 104%;
+                top: 0;
+            }
+        }
+    }
+}
+
+.bs-white {
+    box-shadow: rgba(204, 204, 211, 0.2) 0px 7px 29px 0px;
+}
