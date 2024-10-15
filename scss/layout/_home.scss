@@ -224,13 +224,14 @@
             }
 
             .img-div {
-                width: 4.5rem;
-                height: 4.5rem;
+                width: 8.5rem;
+                height: 8.5rem;
                 margin-bottom: 1rem;
 
                 img {
                     width: 100%;
                     height: 100%;
+                    object-fit: contain;
                 }
             }
 
@@ -1283,7 +1284,7 @@
 
 }
 
-// Zoom Coaching
+// Zoom Auto
 
 .about-us-white.about-us{
     background-color: $white;
